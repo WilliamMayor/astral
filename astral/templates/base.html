@@ -27,7 +27,20 @@
             </ul>
         {% endif %}
         {% endwith %}
-        {% block content %}Nothing here yet{% endblock %}
+        <div id="sidebar">
+            <h1>Astral</h1>
+            <ul class="projects">
+            {% for project in projects | default([]) %}
+                <li>{{ project.name }}</li>
+            {% endfor %}
+                <li><i class="fa fa-2x fa-plus"></i><a href="{{ url_for('.projects_create') }}">New project...</a></li>
+            </ul>
+            <div class="controls">
+                <a href="{{ url_for('.setup') }}">setup</a> | 
+                <a href="{{ url_for('.home') }}">refresh</a>
+            </div>
+        </div>
+        <div id="content">{% block content %}Nothing here yet{% endblock %}</div>
         {% assets "js" %}<script type="text/javascript" src="{{ ASSET_URL }}"></script>{% endassets %}
     </body>
 </html>

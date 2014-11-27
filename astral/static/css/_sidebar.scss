@@ -1,0 +1,35 @@
+#sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: $sidebar-width - 40px;
+    padding: 20px;
+    margin: 0 20px 0 0;
+    background-color: $sidebar-back-color;
+
+    a {
+        color: $sidebar-border-color;
+    }
+
+    .projects {
+        li {
+            border-bottom: 1px solid $sidebar-border-color;
+            &:last-child {
+                border-bottom: none;
+            }
+            i {
+                vertical-align: middle;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .controls {
+        position: absolute;
+        bottom: 5px;
+        left: 5px;
+        font-size: smaller;
+        color: $sidebar-border-color;
+    }
+}

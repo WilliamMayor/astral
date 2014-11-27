@@ -1,11 +1,13 @@
 {% extends "base.html" %}
-{% set title="Setup" %}
+{% set title="New Project" %}
 {% block content %}
-    <h2>Setup</h2>
+    <h2>New Project</h2>
     <form method="POST">
         {{ form.hidden_tag() }}
+        {{ form.name.label }}
+        {{ form.name }}
         {{ form.directory.label }}
         {{ form.directory }}
-        <input type="submit" value="Save" />
+        <input type="submit" value="Create" />
     </form>
 {% endblock %}

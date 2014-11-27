@@ -14,7 +14,8 @@ def create_app(config=None):
     app.config['SQLALCHEMY_DATABASE_URI'] = app.config['DATABASE_URL']
     
     assets.assets.init_app(app)
-    models.db.init_app(app)
+    with app.app_context():
+        models.refresh(app)
     
     app.register_blueprint(routes.routes)
     return app
