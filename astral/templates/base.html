@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Astral{% if title %} - {{ title }}{% endif %}</title>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        {% assets "css" %}<link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}" />{% endassets %}
+    </head>
+    <body class="{{ page | default('') }}">
+        {% with flashes = get_flashed_messages(with_categories=true) %}
+        {% if flashes %}
+            <ul id="flashes">
+            {% for category, flash in flashes %}
+                <li class="{{ category }}">
+                    <div class="icon">
+                        {% if category == 'success' %}<i class="fa fa-check"></i>
+                        {% elif category == 'warn' %}<i class="fa fa-warning"></i>
+                        {% elif category == 'error' %}<i class="fa fa-times-circle"></i>
+                        {% else %}<i class="fa fa-info-circle"></i>{% endif %}
+                    </div>
+                    <div class="message">{{ flash }}</div>
+                    <div class="icon close">
+                        <a href="javascript:void(0)" class="close"><i class="fa fa-fw fa-times"></i></a>
+                    </div>
+                </li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}Nothing here yet{% endblock %}
+        {% assets "js" %}<script type="text/javascript" src="{{ ASSET_URL }}"></script>{% endassets %}
+    </body>
+</html>

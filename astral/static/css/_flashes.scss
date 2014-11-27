@@ -1,0 +1,75 @@
+#flashes {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 500px;
+    margin-left: -250px;
+
+    li {
+        padding: 5px 10px;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 5px;
+        margin: 10px 0;
+
+        .icon, .message {
+            display: inline-block;
+        }
+        .icon {
+            width: 20px;
+            vertical-align: top;
+            &.close {
+                float: right;
+            }
+        }
+        .message {
+            width: 420px;
+            font-size: smaller;
+        }
+
+        &.info {
+            color: $info-front-color;
+            border-color: $info-front-color;
+            background-color: $info-back-color;
+            a {
+                color: $info-front-color;
+                &:hover {
+                    color: darken($info-front-color, 15);
+                }
+            }
+        }
+        &.success {
+            color: $success-front-color;
+            border-color: $success-front-color;
+            background-color: $success-back-color;
+            a {
+                color: $success-front-color;
+                &:hover {
+                    color: darken($success-front-color, 15);
+                }
+            }
+        }
+        &.warn {
+            color: $warn-front-color;
+            border-color: $warn-front-color;
+            background-color: $warn-back-color;
+            a {
+                color: $warn-front-color;
+                &:hover {
+                    color: darken($warn-front-color, 15);
+                }
+            }
+        }
+        &.error {
+            color: $error-front-color;
+            border-color: $error-front-color;
+            background-color: $error-back-color;
+            a {
+                color: $error-front-color;
+                &:hover {
+                    color: darken($error-front-color, 15);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+astral/config/local.py
+venv/
+*.pyc
+astral/static/.webassets-cache/
+
+astral/static/main.min.css
+
+astral/static/main.min.js
